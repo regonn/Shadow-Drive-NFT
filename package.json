@@ -1,0 +1,30 @@
+{
+  "name": "shadow-drive-nft",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "solana"
+  ],
+  "author": "regonn",
+  "license": "MIT",
+  "dependencies": {
+    "@metaplex/js": "^4.12.0",
+    "@project-serum/anchor": "^0.25.0-beta.1",
+    "@shadow-drive/sdk": "^2.0.3",
+    "@solana/web3.js": "^1.43.2",
+    "fs": "^0.0.1-security",
+    "typescript": "^4.7.2"
+  },
+  "volta": {
+    "node": "18.2.0",
+    "npm": "8.9.0"
+  },
+  "devDependencies": {
+    "ts-node": "^10.8.0"
+  }
+}
