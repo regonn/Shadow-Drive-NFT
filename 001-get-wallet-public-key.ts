@@ -1,13 +1,18 @@
-import * as solanaWeb3 from "@solana/web3.js";
-import * as anchor from "@project-serum/anchor";
-import driveUser from "./wallet.json";
+import { Connection } from "@solana/web3.js";
+import { Wallet, web3 } from "@project-serum/anchor";
+import my_wallet from "./wallet.json";
+import fs from "fs";
 
 (async () => {
-  const connection = new solanaWeb3.Connection(
-    "https://ssc-dao.genesysgo.net/"
+  const connection = new Connection("https://ssc-dao.genesysgo.net/", "max");
+  const wallet = new Wallet(
+    web3.Keypair.fromSecretKey(new Uint8Array(my_wallet))
   );
-  const wallet = new anchor.Wallet(
-    anchor.web3.Keypair.fromSecretKey(new Uint8Array(driveUser))
-  );
+
   console.log(wallet.publicKey.toString());
+
+  const output_data = {
+    walletPublicKey: wallet.publicKey.toString(),
+  };
+  fs.writeFileSync("output-001.json", JSON.stringify(output_data));
 })();

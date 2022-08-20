@@ -1,6 +1,7 @@
 node_modules/*
+
 wallet.json
-image.png
-data.log
-metadata.json
-metaplex_metadata.json
+assets/*.json
+assets/*.png
+
+output-*.json
